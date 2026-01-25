@@ -163,10 +163,16 @@ const EditPostPage = ({ posts, onUpdate }) => {
   );
 };
 
+// Main App Component
+// Manages the global state for posts and search query.
+// Handles routing for the entire application.
 function App() {
+  // State for storing the list of blog posts
   const [posts, setPosts] = useState(initialPosts);
+  // State for storing the current search query
   const [searchQuery, setSearchQuery] = useState('');
 
+  // Handler to add a new post
   const handleCreatePost = (newPostData) => {
     const newPost = {
       ...newPostData,
@@ -175,11 +181,12 @@ function App() {
       // Use summary from content if not provided?
       // For simplicity, we'll assume summary is same as content or truncated content
       summary: newPostData.content.substring(0, 100) + '...',
-      comments: []
+      comments: [] // Initialize with empty comments
     };
     setPosts([...posts, newPost]);
   };
 
+  // Handler to update an existing post
   const handleUpdatePost = (updatedPostData) => {
     // Recalculate summary if content changed
     const updatedPost = {
@@ -190,10 +197,12 @@ function App() {
     setPosts(posts.map(p => p.id === updatedPostData.id ? updatedPost : p));
   };
 
+  // Handler to delete a post by ID
   const handleDeletePost = (id) => {
     setPosts(posts.filter(p => p.id !== id));
   };
 
+  // Handler to add a comment to a specific post
   const handleAddComment = (postId, comment) => {
     setPosts(posts.map(p => {
       if (p.id === postId) {
@@ -206,10 +215,12 @@ function App() {
     }));
   };
 
+  // Handler to update search query from SearchBar
   const handleSearch = (query) => {
     setSearchQuery(query);
   };
 
+  // Filter posts based on search query (title or content)
   const filteredPosts = posts.filter(post => {
     if (!searchQuery) return true;
     const lowerQuery = searchQuery.toLowerCase();
@@ -225,9 +236,11 @@ function App() {
         <Route path="/" element={
           <>
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '20px' }}>
+              {/* Display dynamic header based on search state */}
               <h1>{searchQuery ? `Search Results for "${searchQuery}"` : 'Blog Posts'}</h1>
               <Link to="/posts/new" className="action-button">Create New Post</Link>
             </div>
+            {/* Conditionally render post list or empty state */}
             {filteredPosts.length > 0 ? (
               <BlogPostList posts={filteredPosts} />
             ) : (

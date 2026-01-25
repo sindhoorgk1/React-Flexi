@@ -6,7 +6,10 @@ import CommentList from './CommentList';
 import CommentForm from './CommentForm';
 import styles from './BlogPostDetail.module.css';
 
+// Component to display full details of a blog post
+// Includes Delete, Comment Listing, and Comment Form functionalities
 const BlogPostDetail = ({ id, title, content, author, date, onDelete, comments, onAddComment }) => {
+    // State to manage the delete confirmation dialog visibility
     const [isDeleteDialogOpen, setIsDeleteDialogOpen] = useState(false);
 
     if (!title || !content || !author || !date) {
@@ -19,13 +22,15 @@ const BlogPostDetail = ({ id, title, content, author, date, onDelete, comments, 
         year: 'numeric',
     });
 
+    // Show confirmation dialog
     const handleDeleteClick = () => {
         setIsDeleteDialogOpen(true);
     };
 
+    // Confirm deletion
     const handleConfirmDelete = () => {
         onDelete(id);
-        setIsDeleteDialogOpen(false); // Clean up state, though component usually unmounts
+        setIsDeleteDialogOpen(false);
     };
 
     const handleCloseDialog = () => {
@@ -34,14 +39,7 @@ const BlogPostDetail = ({ id, title, content, author, date, onDelete, comments, 
 
     return (
         <div className={styles.blogPostDetail}>
-            <div className={styles.headerActions}>
-                {/* Space for actions if needed, or Delete button can be placed here or at bottom */}
-                {/* Requirement says Delete button on blog post view. Let's put it top right or bottom.
-               Given the designs usually put actions together, let's render it within the detail container 
-               or perhaps passed from parent. But for structure, let's keep it here. 
-           */}
-            </div>
-
+            {/* ... Content ... */}
             <h1 className={styles.title}>{title}</h1>
             <p className={styles.author}>By {author}</p>
             <p className={styles.date}>Published on {formattedDate}</p>
@@ -60,6 +58,7 @@ const BlogPostDetail = ({ id, title, content, author, date, onDelete, comments, 
                 onConfirm={handleConfirmDelete}
             />
 
+            {/* Comment Section */}
             <div className={styles.commentSection}>
                 <h3 className={styles.heading}>Comments</h3>
                 <CommentList comments={comments} />
