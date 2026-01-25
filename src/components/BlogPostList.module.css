@@ -1,0 +1,27 @@
+.blogPostList {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.emptyMessage {
+    text-align: center;
+    font-size: 18px;
+    color: #666666;
+    margin-top: 20px;
+}
+
+/* Tablet View */
+@media (max-width: 1199px) {
+    .blogPostList {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Mobile View */
+@media (max-width: 768px) {
+    .blogPostList {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+}

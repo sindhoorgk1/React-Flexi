@@ -1,0 +1,54 @@
+.blogPostItem {
+  background-color: #FFFFFF;
+  border: 1px solid #DDDDDD;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.title {
+  text-decoration: none;
+  color: #333333;
+}
+
+.title:hover {
+  color: #007BFF;
+}
+
+.title h2 {
+  font-size: 24px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.summary {
+  font-size: 16px;
+  color: #666666;
+  margin: 0;
+}
+
+.date {
+  font-size: 14px;
+  color: #999999;
+  margin: 0;
+}
+
+/* Mobile View Adjustments */
+@media (max-width: 768px) {
+  .blogPostItem {
+    padding: 15px;
+  }
+
+  .title h2 {
+    font-size: 20px;
+  }
+
+  .summary {
+    font-size: 14px;
+  }
+
+  .date {
+    font-size: 12px;
+  }
+}

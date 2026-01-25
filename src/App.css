@@ -1,0 +1,35 @@
+.App {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.action-link {
+  display: inline-block;
+  background-color: #007BFF;
+  color: white;
+  padding: 10px 15px;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.2s;
+}
+
+.action-link:hover {
+  background-color: #0056b3;
+  text-decoration: none;
+}
+
+.action-button {
+  background-color: #28a745;
+  color: white;
+  padding: 10px 15px;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.2s;
+}
+
+.action-button:hover {
+  background-color: #218838;
+}

@@ -1,0 +1,98 @@
+.blogPostDetail {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 40px;
+    background-color: #FFFFFF;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.title {
+    font-size: 36px;
+    font-weight: bold;
+    color: #333333;
+    margin-bottom: 20px;
+    line-height: 1.2;
+}
+
+.author {
+    font-size: 18px;
+    color: #666666;
+    margin: 0 0 10px 0;
+}
+
+.date {
+    font-size: 16px;
+    color: #999999;
+    margin: 0 0 30px 0;
+}
+
+.content {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #333333;
+}
+
+/* Links within content */
+.content a {
+    color: #007BFF;
+    text-decoration: underline;
+}
+
+.content a:hover {
+    color: #0056b3;
+}
+
+.notFound {
+    text-align: center;
+    font-size: 20px;
+    color: #666666;
+    margin-top: 50px;
+}
+
+.actions {
+    margin-top: 40px;
+    border-top: 1px solid #eee;
+    padding-top: 20px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.commentSection {
+    margin-top: 40px;
+    border-top: 1px solid #eee;
+    padding-top: 20px;
+}
+
+.heading {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Mobile View Adjustments */
+@media (max-width: 768px) {
+    .blogPostDetail {
+        padding: 20px;
+    }
+
+    .title {
+        font-size: 28px;
+        margin-bottom: 15px;
+    }
+
+    .author {
+        font-size: 14px;
+        margin-bottom: 5px;
+    }
+
+    .date {
+        font-size: 12px;
+        margin-bottom: 5px;
+    }
+
+    .content {
+        font-size: 14px;
+        line-height: 1.4;
+        margin-top: 20px;
+    }
+}
