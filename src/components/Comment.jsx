@@ -2,7 +2,10 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styles from './CommentSystem.module.css';
 
+// Component to render a single comment
+// Displays avatar, name, formatted date, and comment text
 const Comment = ({ name, date, text, avatar }) => {
+    // Format date to a readable string
     const formattedDate = new Date(date).toLocaleString('en-US', {
         month: 'long',
         day: 'numeric',

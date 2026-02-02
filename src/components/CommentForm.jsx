@@ -2,10 +2,13 @@ import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import styles from './CommentSystem.module.css';
 
+// Form component for submitting new comments
+// Handles state for name and text inputs, and submission logic
 const CommentForm = ({ onSubmit, isLoggedIn, userName }) => {
     const [name, setName] = useState('');
     const [text, setText] = useState('');
 
+    // Pre-fill name if user is logged in
     useEffect(() => {
         if (isLoggedIn && userName) {
             setName(userName);

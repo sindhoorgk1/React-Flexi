@@ -3,6 +3,8 @@ import PropTypes from 'prop-types';
 import Comment from './Comment';
 import styles from './CommentSystem.module.css';
 
+// Component to render a list of Comment components
+// Handles empty state if no comments exist
 const CommentList = ({ comments }) => {
     if (!comments || comments.length === 0) {
         return <p className={styles.noComments}>No comments yet. Be the first to share your thoughts!</p>;

@@ -3,13 +3,17 @@ import { Link } from 'react-router-dom';
 import SearchBar from './SearchBar';
 import styles from './NavBar.module.css';
 
+// Navigation Bar Component
+// Handles navigation links, search bar integration, and mobile responsive menu
 const NavBar = ({ onSearch }) => {
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
+    // Toggle logic for mobile hamburger menu
     const toggleMobileMenu = () => {
         setIsMobileMenuOpen(!isMobileMenuOpen);
     };
 
+    // Close menu when a link is clicked
     const closeMenu = () => {
         setIsMobileMenuOpen(false);
     };
